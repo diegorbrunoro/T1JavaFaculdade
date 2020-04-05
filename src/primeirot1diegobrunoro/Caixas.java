@@ -1,7 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/*FACULDADE DOM BOSCO DE PORTO ALEGRE
+ * Sistemas de informação - Estrtura de Dados - Primeiro T1
+ * 
+ * Objetivo do Programa: Empilhar em pilhas diferentes os valores digitados respeitando regras do empilhamento de caixas onde o valor maior não pode fcar sobre o menor.
+ * Componentes do Grupo: Diego Rodrigues Brunoro.
+ * Data de Entrega do arquivo Fonte: 05/04/2020.
  */
 package primeirot1diegobrunoro;
 
