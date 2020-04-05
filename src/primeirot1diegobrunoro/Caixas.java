@@ -22,36 +22,39 @@ public class Caixas {
         // TODO code application logic here
         Scanner nCaixa = new Scanner(System.in);
         
-        Pilha pA = new Pilha(6);
-        Pilha pB = new Pilha(6);
-        Pilha pC = new Pilha(6);
+        Pilha pA = new Pilha(4);
+        Pilha pB = new Pilha(4);
+        Pilha pC = new Pilha(4);
         
-        while(pA.isEmpty()){
+        int i =0;
+        pA.push(3);
+        pB.push(5);
+        pC.push(7);
+            
+            for(i=0;i<=6;i++){
+                
+                
+                while(!pA.isFull()){
+            
        int Caixa = nCaixa.nextInt();
-          
+       
+       
        
                 
-           if (pA.top()<=Caixa){
-            pB.push(Caixa);
-        } else{
+           if (pA.top()>=Caixa){
             pA.push(Caixa);
-        }
-        if (pB.top()<=Caixa){
-            pC.push(Caixa);
-        }else{
-            pB.push(Caixa);
-        }
-        if (pC.top()<=Caixa){
-            pA.push(Caixa);
-        }else{
-            pC.push(Caixa);
+        } 
+           if (pB.top()>=Caixa){
+               pB.push(Caixa);
+           }
+           if (pB.top()>=Caixa){
+               pC.push(Caixa);
         }
         }
+            }
 
         while (!pA.isEmpty()){
-         System.out.println(pA.pop() + " Pilha A"); 
-         System.out.println(pB.pop() + " Pilha B"); 
-         System.out.println(pC.pop() + " Pilha C"); 
+         System.out.println(" Pilha A  " +"|" +pA.pop() +"|"+ " Pilha B  " +"|" +pB.pop()+"|"+" Pilha C  " +"|" +pC.pop()+"|" ); 
         }
         
     }
