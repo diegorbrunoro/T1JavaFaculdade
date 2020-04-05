@@ -31,10 +31,20 @@ public class Caixas {
           
        
                 
-        if (pA.top()<=Caixa){
+           if (pA.top()<=Caixa){
             pB.push(Caixa);
         } else{
             pA.push(Caixa);
+        }
+        if (pB.top()<=Caixa){
+            pC.push(Caixa);
+        }else{
+            pB.push(Caixa);
+        }
+        if (pC.top()<=Caixa){
+            pA.push(Caixa);
+        }else{
+            pC.push(Caixa);
         }
         }
 
