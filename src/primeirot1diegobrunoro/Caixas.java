@@ -29,11 +29,28 @@ public class Caixas {
         Pilha pC = new Pilha(4);
         
         int i =0;
+        
+        
+       // Foi alterado este trecho para que ele possa ser utilizado como logica no desenvolvimento 
+        for(i=0;i<=6;i++){
+            
+             int Caixa = nCaixa.nextInt();
+            
+            if (pA.top()>=Caixa){
+            pA.push(Caixa);
+        } else 
+            {while (pA.top()< Caixa && !pA.isEmpty())
+            {if (pA.top() == 5)
+                pB.push(pA.pop());
+                }
+                
+                    }
+        
         pA.push(3);
         pB.push(5);
         pC.push(7);
             
-            for(i=0;i<=6;i++){
+            
                 
                 
                 while(!pA.isFull()){
