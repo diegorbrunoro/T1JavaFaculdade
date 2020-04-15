@@ -24,58 +24,64 @@ public class Caixas {
         // TODO code application logic here
         Scanner nCaixa = new Scanner(System.in);
         
-        Pilha pA = new Pilha(4);
-        Pilha pB = new Pilha(4);
-        Pilha pC = new Pilha(4);
+        Pilha pA = new Pilha(6);
+        Pilha pB = new Pilha(6);
+        Pilha pC = new Pilha(6);
         
         int i =0;
         
         
        // Foi alterado este trecho para que ele possa ser utilizado como logica no desenvolvimento 
-        for(i=0;i<=6;i++){
+        for(i=0;i<6;i++){
             
+            // Input dos valores a serem colocados na FILA
              int Caixa = nCaixa.nextInt();
             
-            if (pA.top()>=Caixa){
-            pA.push(Caixa);
-        } else 
-            {while (pA.top()< Caixa && !pA.isEmpty())
-            {if (pA.top() == 5)
-                pB.push(pA.pop());
+             
+            // Validação neste trexo é verificado se existe valor pré-existente e
+            // se este valor é maior do que o valor do ultimo Input de dados, caso menor realizar o input da nova informação.
+             if (pA.top()>=Caixa){
+                 pA.push(Caixa);
+             }   
+             
+             // Caso o valor seja maior do que o valor que esta no TOPO
+             //Verifica que enquanto o valor do Topo for menor ou vazio
+             //E que se o valor é igual a 5 ele realiza a extração do valor da pilha A e realiza o push na Fila B
+             //E que se o valor é igual a 3 ele realiza a extração do valor da pilha A e realiza o push na Fila C
+             //Ao final ele adicionar o Valor restante que no caso é o 7
+             //realizando 2 enquanto nas filas A e B para que retire os valores e devolva para a fila A
+             //na posição correta do maior para o menor.
+             else 
+             {
+                while (pA.top()< Caixa && !pA.isEmpty())
+                {
+                    if (pA.top() == 5)
+                        pB.push(pA.pop());
+                
+                
+                    if (pA.top() == 3)
+                        pC.push(pA.pop());
+                
+            
+                } 
+                pA.push(Caixa);
+                while (!pB.isEmpty()){
+                     pA.push(pB.pop());
                 }
-                
-                    }
-        
-        pA.push(3);
-        pB.push(5);
-        pC.push(7);
-            
-            
-                
-                
-                while(!pA.isFull()){
-            
-       int Caixa = nCaixa.nextInt();
-       
-       
-       
-                
-           if (pA.top()>=Caixa){
-            pA.push(Caixa);
-        } 
-           if (pB.top()>=Caixa){
-               pB.push(Caixa);
-           }
-           if (pB.top()>=Caixa){
-               pC.push(Caixa);
-        }
-        }
-            }
+                while (!pC.isEmpty()){
+                     pA.push(pC.pop());
+                }
+             }
 
+            
+            
+                
+               
         while (!pA.isEmpty()){
          System.out.println(" Pilha A  " +"|" +pA.pop() +"|"+ " Pilha B  " +"|" +pB.pop()+"|"+" Pilha C  " +"|" +pC.pop()+"|" ); 
         }
         
     }
     
+    }
 }
