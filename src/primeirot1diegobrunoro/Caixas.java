@@ -73,15 +73,11 @@ public class Caixas {
                 }
              }
 
-            
-            
-                
-               
-        while (!pA.isEmpty()){
-         System.out.println(" Pilha A  " +"|" +pA.pop() +"|"+ " Pilha B  " +"|" +pB.pop()+"|"+" Pilha C  " +"|" +pC.pop()+"|" ); 
-        }
         
     }
     
+        while (!pA.isEmpty()){
+         System.out.println(" Pilha A  " +"|" +pA.pop()); 
+        }
     }
 }
